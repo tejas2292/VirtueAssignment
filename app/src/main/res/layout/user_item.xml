@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#F8F2EE"/>
+
+        <TextView
+            android:id="@+id/general"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#5BA092"
+            android:text="+91-8446593128 || 04 Jun 2021 || India"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bhupendra"
+            android:textColor="#3C3A36"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:padding="15dp"/>
+
+        <TextView
+            android:id="@+id/occupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Software engineer"
+            android:textColor="#3C3A36"
+            android:textSize="18sp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="5dp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
