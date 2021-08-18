@@ -69,12 +69,16 @@ public class MainActivity extends AppCompatActivity {
                     LoginResponse loginResponse = response.body();
 
                     if(response.isSuccessful()){
-
+                        if(response.code() == 200){
                             sharedPreferenceManager.saveUser(loginResponse.getPayload());
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             finish();
                             Toast.makeText(MainActivity.this, "Login Success: "+loginResponse.getStatus().message, Toast.LENGTH_SHORT).show();
 
+                        }
+                         else {
+                            Toast.makeText(MainActivity.this, "Wrong pass", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else {
                         Toast.makeText(MainActivity.this, "Not logged in: ", Toast.LENGTH_SHORT).show();
@@ -83,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
                 }
             });
         }

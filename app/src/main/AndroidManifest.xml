@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDevTask">
-        <activity android:name=".AllUsersActivity"></activity>
+        <activity android:name=".ChangeUserPasswordActivity"></activity>
+        <activity android:name=".AllPostsActivity" />
+        <activity android:name=".AllUsersActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

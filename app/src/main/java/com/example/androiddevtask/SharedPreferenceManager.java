@@ -46,7 +46,7 @@ public class SharedPreferenceManager {
                 sharedPreferences.getString("token", null));
     }
 
-    void logout(){
+    public void logout(){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.clear();
