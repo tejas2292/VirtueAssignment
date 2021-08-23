@@ -11,11 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDevTask">
-        <activity android:name=".ChangeUserPasswordActivity"></activity>
-        <activity android:name=".AllPostsActivity" />
-        <activity android:name=".AllUsersActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SearchUserActivity"></activity>
+        <activity
+            android:name=".ChangeUserPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AllPostsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AllUsersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

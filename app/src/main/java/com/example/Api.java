@@ -2,6 +2,7 @@ package com.example;
 
 import com.ModelResponse.LoginResponse;
 import com.ModelResponse.PasswordResponse;
+import com.ModelResponse.SearchUserResponse;
 import com.example.androiddevtask.SharedPreferenceManager;
 
 import retrofit2.Call;
@@ -35,5 +36,11 @@ public interface Api {
             @Header("Authorization") String authToken,
             @Path("id") String id,
             @Field("password") String password
+    );
+
+    @GET("admin/search/{name}")
+    Call<SearchUserResponse> searchUserApi(
+            @Header("Authorization") String authToken,
+            @Path("name") String name
     );
 }

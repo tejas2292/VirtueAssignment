@@ -25,7 +25,6 @@ public class ChangeUserPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_user_password);
         etNewPass = findViewById(R.id.et_newpass);
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
-
     }
 
     public void onSubmitPassword(View view) {
