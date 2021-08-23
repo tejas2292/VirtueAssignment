@@ -22,6 +22,7 @@ public class AllPostsActivity extends AppCompatActivity {
     List<PostPayloads> userList;
     PostAdapter adapter;
     RecyclerView recyclerView;
+    String auth;
     SharedPreferenceManager sharedPreferenceManager;
 
     @Override
@@ -33,15 +34,15 @@ public class AllPostsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         sharedPreferenceManager = new SharedPreferenceManager(getApplicationContext());
-
-        Call<FetchPostResponse> call = RetrofitClient.getInstance().getApi().getPosts("Bearer "+sharedPreferenceManager.getPayload().getToken());
+        auth = "Bearer "+sharedPreferenceManager.getPayload().getToken();
+        Call<FetchPostResponse> call = RetrofitClient.getInstance().getApi().getPosts(auth);
 
         call.enqueue(new Callback<FetchPostResponse>(){
             @Override
             public void onResponse(Call<FetchPostResponse> call, Response<FetchPostResponse> response) {
 
                 userList = response.body().getPostPayloads();
-                adapter = new PostAdapter(getApplicationContext(), userList);
+                adapter = new PostAdapter(getApplicationContext(), userList, auth);
                 recyclerView.setAdapter(adapter);
 
             }

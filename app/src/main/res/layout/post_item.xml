@@ -13,12 +13,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/delete_post"
+            android:clickable="true"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="@drawable/delete"
             android:layout_marginLeft="15dp"
-            android:padding="5dp"
-            android:src="@drawable/delete"/>
+            android:padding="5dp"/>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"/>

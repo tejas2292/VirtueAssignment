@@ -1,16 +1,16 @@
 package com.example;
 
+import com.ModelResponse.DeletePostResponse;
 import com.ModelResponse.LoginResponse;
 import com.ModelResponse.PasswordResponse;
 import com.ModelResponse.SearchUserResponse;
-import com.example.androiddevtask.SharedPreferenceManager;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -43,4 +43,9 @@ public interface Api {
             @Header("Authorization") String authToken,
             @Path("name") String name
     );
+
+    @DELETE("admin/posts/delete/{id}")
+    Call<DeletePostResponse> deletePostApi(
+            @Header("Authorization") String authToken,
+            @Path("id") String id);
 }
